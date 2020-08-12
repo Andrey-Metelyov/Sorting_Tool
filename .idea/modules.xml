@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sorting_Tool.iml" filepath="$PROJECT_DIR$/.idea/modules/Sorting_Tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Sorting_Tool.Problems-Count_the_number_of_merge_operations.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Sorting_Tool.Problems-Count_the_number_of_merge_operations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Sorting_Tool.Problems-Count_the_number_of_merge_operations.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Sorting_Tool.Problems-Count_the_number_of_merge_operations.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Sorting_Tool.Problems-Count_the_number_of_merge_operations.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Sorting_Tool.Problems-Count_the_number_of_merge_operations.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Sorting_Tool.Problems-Merge_all_sequences.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Sorting_Tool.Problems-Merge_all_sequences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Sorting_Tool.Problems-Merge_all_sequences.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Sorting_Tool.Problems-Merge_all_sequences.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Sorting_Tool.Problems-Merge_all_sequences.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Sorting_Tool.Problems-Merge_all_sequences.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The number of inversions/Sorting_Tool.Problems-The_number_of_inversions.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The number of inversions/Sorting_Tool.Problems-The_number_of_inversions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The number of inversions/Sorting_Tool.Problems-The_number_of_inversions.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The number of inversions/Sorting_Tool.Problems-The_number_of_inversions.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The number of inversions/Sorting_Tool.Problems-The_number_of_inversions.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The number of inversions/Sorting_Tool.Problems-The_number_of_inversions.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sorting Tool/task/Sorting_Tool.Sorting_Tool-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Sorting Tool/task/Sorting_Tool.Sorting_Tool-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sorting Tool/task/Sorting_Tool.Sorting_Tool-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Sorting Tool/task/Sorting_Tool.Sorting_Tool-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sorting Tool/task/Sorting_Tool.Sorting_Tool-task.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Sorting Tool/task/Sorting_Tool.Sorting_Tool-task.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Sorting_Tool.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Sorting_Tool.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Sorting_Tool.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Sorting_Tool.util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Sorting_Tool.util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Sorting_Tool.util.test.iml" />
+    </modules>
+  </component>
+</project>

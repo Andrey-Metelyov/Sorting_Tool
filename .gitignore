@@ -1,0 +1,7 @@
+# Project exclude paths
+/.gradle/
+/Problems/The number of inversions/out/
+/Problems/The number of inversions/out/production/classes/
+/Sorting Tool/task/build/
+/Sorting Tool/task/out/
+/Sorting Tool/task/out/production/classes/
