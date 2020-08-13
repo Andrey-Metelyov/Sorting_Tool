@@ -1,11 +1,13 @@
 package sorting;
 
+import java.io.*;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
+    private static FileWriter writer = null;
 
     public static void main(final String[] args) {
         menu(args);
@@ -15,6 +17,22 @@ public class Main {
         Map<String, String> parameters = parseArgs(args);
         String dataType = parameters.getOrDefault("-dataType", "word");
         String sortingType = parameters.getOrDefault("-sortingType", "natural");
+        String inputFile = parameters.get("-inputFile");
+        if (inputFile != null) {
+            try {
+                scanner = new Scanner(new FileInputStream(inputFile));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        String outputFile = parameters.get("-outputFile");
+        if (outputFile != null) {
+            try {
+                writer = new FileWriter(outputFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         switch (dataType) {
             case "long":
                 processLongs(sortingType);
@@ -25,6 +43,14 @@ public class Main {
             case "word":
             default:
                 processWords(sortingType);
+        }
+        scanner.close();
+        if (writer != null) {
+            try {
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -72,21 +98,34 @@ public class Main {
 //        String longest = words.stream()
 //                .max((s1, s2) -> s1.length() > s2.length() ? 1 : s1.length() < s2.length() ? -1 : s1.compareTo(s2)).get();
 //        int freq = Collections.frequency(words, longest);
-        System.out.printf("Total words: %d.\n", count);
+//        System.out.printf("Total words: %d.\n", count);
+        output(String.format("Total words: %d.\n", count));
         if ("byCount".equals(sortingType)) {
             words.stream()
                     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                     .entrySet()
                     .stream()
 //                    .sorted(Map.Entry.comparingByValue())
-                    .sorted(Comparator.comparing((Map.Entry<String, Long> e) -> e.getValue())
+                    .sorted(Map.Entry.<String, Long>comparingByValue()
                             .thenComparing(Map.Entry::getKey))
-                    .forEach(e -> System.out.printf("%s: %d time(s), %d%%\n", e.getKey(), e.getValue(), e.getValue() * 100 / count));
+                    .forEach(e -> output(String.format("%s: %d time(s), %d%%\n", e.getKey(), e.getValue(), e.getValue() * 100 / count)));
         } else {
-            System.out.print("Sorted data:");
+            output("Sorted data:");
             words.stream()
                     .sorted()
-                    .forEach(word -> System.out.print(" " + word));
+                    .forEach(word -> output(" " + word));
+        }
+    }
+
+    private static void output(String string) {
+        if (writer != null) {
+            try {
+                writer.write(string);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.print(string);
         }
     }
 
@@ -100,21 +139,21 @@ public class Main {
 //        String longest = lines.stream()
 //                .max((s1, s2) -> s1.length() > s2.length() ? 1 : s1.length() < s2.length() ? -1 : s1.compareTo(s2)).get();
 //        int freq = Collections.frequency(lines, longest);
-        System.out.println("Total lines: " + count + ".");
+        output("Total lines: " + count + ".\n");
         if ("byCount".equals(sortingType)) {
             lines.stream()
                     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                     .entrySet()
                     .stream()
 //                    .sorted(Map.Entry.comparingByValue())
-                    .sorted(Comparator.comparing((Map.Entry<String, Long> e) -> e.getValue())
+                    .sorted(Map.Entry.<String, Long>comparingByValue()
                             .thenComparing(Map.Entry::getKey))
-                    .forEach(e -> System.out.printf("%s: %d time(s), %d%%\n", e.getKey(), e.getValue(), e.getValue() * 100 / count));
+                    .forEach(e -> output(String.format("%s: %d time(s), %d%%\n", e.getKey(), e.getValue(), e.getValue() * 100 / count)));
         } else {
-            System.out.print("Sorted data:");
+            output("Sorted data:\n");
             lines.stream()
                     .sorted()
-                    .forEach(System.out::println);
+                    .forEach(line -> output(line + "\n"));
 //        System.out.println("The longest line:");
 //        System.out.println(longest);
 //        System.out.println("(" + freq + " time(s), " + freq * 100 / count + "%).");
@@ -133,18 +172,18 @@ public class Main {
         }
 //        LongSummaryStatistics statistics = numbers.stream().mapToLong(Long::longValue).summaryStatistics();
         int count = numbers.size();
-        System.out.println("Total numbers: " + count);
+        output("Total numbers: " + count + "\n");
         if ("byCount".equals(sortingType)) {
             numbers.stream()
                     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                     .entrySet()
                     .stream().sorted(Map.Entry.comparingByValue())
-                    .forEach(e -> System.out.printf("%d: %d time(s), %d%%\n", e.getKey(), e.getValue(), e.getValue() * 100 / count));
+                    .forEach(e -> output(String.format("%d: %d time(s), %d%%\n", e.getKey(), e.getValue(), e.getValue() * 100 / count)));
         } else {
-            System.out.print("Sorted data:");
+            output("Sorted data:");
             numbers.stream()
                     .sorted()
-                    .forEach(number -> System.out.print(" " + number));
+                    .forEach(number -> output(" " + number));
 //        System.out.println("The greatest number: " + max + " (" + freq + " time(s)).");
         }
     }
