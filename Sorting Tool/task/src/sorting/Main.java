@@ -33,6 +33,16 @@ public class Main {
         for (int i = 0; i < args.length / 2; i++) {
             result.put(args[2 * i], args[2 * i + 1]);
         }
+        if (result.containsKey("-sortingType")) {
+            if (result.get("-sortingType").isEmpty()) {
+                System.out.println("No sorting type defined!");
+            }
+        }
+        if (result.containsKey("-dataType")) {
+            if (result.get("-dataType").isEmpty()) {
+                System.out.println("No data type type defined!");
+            }
+        }
         return result;
     }
 
@@ -114,8 +124,12 @@ public class Main {
     private static void processLongs(String sortingType) {
         List<Long> numbers = new ArrayList<>();
         while (scanner.hasNextLong()) {
-            long number = scanner.nextLong();
-            numbers.add(number);
+            try {
+                long number = scanner.nextLong();
+                numbers.add(number);
+            } catch (InputMismatchException e) {
+                System.out.println("error");
+            }
         }
 //        LongSummaryStatistics statistics = numbers.stream().mapToLong(Long::longValue).summaryStatistics();
         int count = numbers.size();
