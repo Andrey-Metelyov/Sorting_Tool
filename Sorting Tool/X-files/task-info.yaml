@@ -508,6 +508,9 @@ files:
 
 
   learner_created: false
+- name: out.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/45/stages/244/implement
-status: Unchecked
-record: -1
+status: Solved
+record: 5

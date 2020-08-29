@@ -106,10 +106,6 @@ topics:
     theory_id: 4953
   - title: Recursion basics
     theory_id: 5984
-  - title: Pseudocode basics
-    theory_id: 8228
-  - title: Complex constructions in pseudocode
-    theory_id: 8233
   - title: Introducing the first algorithm
     theory_id: 10336
   - title: The big O notation
